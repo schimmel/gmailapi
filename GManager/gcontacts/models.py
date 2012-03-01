@@ -27,7 +27,7 @@ class contact(models.Model):
     state = models.CharField(u'Bundesland',max_length=255, null=True)
     country = models.CharField(u'Land',max_length=255, null=True)
     bday = models.DateField(u'Geburtstag', null=True)
-    website = models.DateField(u'Website',max_length=255, null=True)
+    website = models.CharField(u'Website',max_length=255, null=True)
 
     def __unicode__(self):
         return self.firstname + "" + self.lastname
