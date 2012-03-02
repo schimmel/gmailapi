@@ -3,7 +3,7 @@
 from django.db import models
 
 
-class sync_user(models.Model):
+class SyncUser(models.Model):
     email = models.CharField(u'E-Mail',max_length=255)
     pwd = models.CharField(u'Passwort',max_length=100)
     active = models.BooleanField(u'Syncronisieren',default=True)
@@ -11,8 +11,8 @@ class sync_user(models.Model):
     def __unicode__(self):
         return self.email
 
-class contact(models.Model):
-    origin = models.ForeignKey(sync_user)
+class Contact(models.Model):
+    origin = models.ForeignKey(SyncUser)
     firstname = models.CharField(u'Vorname', max_length=255)
     lastname = models.CharField(u'Nachname',max_length=255)
     prname = models.CharField(u'Vorsilbe',max_length=100, null=True)

@@ -1,7 +1,7 @@
-from gcontacts.models import sync_user,contact
+from gcontacts.models import SyncUser,Contact
 from django.contrib import admin
 
-class contactAdmin(admin.ModelAdmin):
+class ContactAdmin(admin.ModelAdmin):
     fieldsets = [
             ('Name', 
                 {'fields':
@@ -24,5 +24,5 @@ class contactAdmin(admin.ModelAdmin):
                 ),
             ]
 
-admin.site.register(sync_user)
-admin.site.register(contact,contactAdmin)
+admin.site.register(SyncUser)
+admin.site.register(Contact,ContactAdmin)
